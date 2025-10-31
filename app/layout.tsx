@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Lora, Assistant } from "next/font/google";
 import "./globals.css";
+import "highlight.js/styles/github-dark.css";
 import Navbar from "./components/Navbar";
 
 const lora = Lora({

@@ -8,7 +8,7 @@ const NAME = 'Aayan Khan';
 
 const NAV_LINKS = [
   { name: 'Projects', href: '/projects' },
-  { name: 'Blog', href: '/blog' },
+  { name: 'Blogs', href: '/blogs' },
   { name: 'Contact', href: '/contact' },
 ] as const;
 
@@ -24,7 +24,7 @@ function NavLink({ href, name, isActive, onClick }: NavLinkProps) {
     <Link
       href={href}
       onClick={onClick}
-      className={`relative flex items-center py-2 px-3 text-(--color-text-primary) text-base font-bold leading-6 cursor-pointer no-underline border-b-[5px] transition-all duration-200 ${
+      className={`relative flex items-center py-2 px-3 text-(--color-text-primary) text-lg font-extrabold leading-6 cursor-pointer no-underline border-b-[5px] transition-all duration-200 ${
         isActive 
           ? 'border-(--color-primary-red)' 
           : 'border-transparent hover:border-(--color-primary-red)'
@@ -71,7 +71,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-1000 bg-white">
-      <div className="max-w-6xl lg:mx-10 xl:mx-auto p-2 border-b border-(--color-border-gray)">
+      <div className="max-w-6xl mx-0 lg:mx-10 xl:mx-auto p-2 border-b border-(--color-border-gray)">
         <div className="flex items-stretch justify-between">
           {/* Name */}
           <Link href="/" className="flex items-center shrink-0 grow-0 py-2 px-3 border-b-[5px] border-transparent hover:border-(--color-primary-red) transition-all duration-200">
@@ -101,8 +101,8 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-gray-200">
-          <nav className="flex flex-col max-w-3xl mx-auto" aria-label="Mobile navigation">
+        <div className="lg:hidden bg-white border-b border-gray-200 py-10 px-5">
+          <nav className="flex flex-col max-w-6xl mx-auto" aria-label="Mobile navigation">
             {NAV_LINKS.map((link) => (
               <NavLink
                 key={link.href}

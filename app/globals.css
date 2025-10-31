@@ -1,7 +1,9 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme inline {
   --color-primary-red: #fa0000;
+  --color-primary-blue: #2222ff;
   --color-text-primary: #333333;
   --color-text-black: #0a0a0a;
   --color-border-gray: #aeaeae;
@@ -13,6 +15,7 @@
   --font-lora: 'Lora', serif;
   --font-assistant: 'Assistant', sans-serif;
   --color-primary-red: #fa0000;
+  --color-primary-blue: #2222ff;
 }
 
 html {
