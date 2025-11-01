@@ -4,6 +4,8 @@ import "./globals.css";
 import "highlight.js/styles/github-dark.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { GA_MEASUREMENT_ID } from "@/lib/gtag";
+import Script from "next/script";
 
 const lora = Lora({
   variable: "--font-lora",
@@ -30,13 +32,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${lora.variable} ${assistant.variable} antialiased`}
-      >
+      <head>
+        {/* Google Analytics Script */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}', { send_page_view: false });
+          `}
+        </Script>
+      </head>
+
+      <body className={`${lora.variable} ${assistant.variable} antialiased`}>
         <Navbar />
-        <div className="pt-16">
-          {children}
-        </div>
+        <div className="pt-16">{children}</div>
         <Footer />
       </body>
     </html>
