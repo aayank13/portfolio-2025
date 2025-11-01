@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Lora, Assistant } from "next/font/google";
 import "./globals.css";
 import "highlight.js/styles/github-dark.css";
@@ -55,7 +56,9 @@ export default function RootLayout({
         <Navbar />
         <div className="pt-16">{children}</div>
         <Footer />
-        <Analytics />
+        <Suspense fallback={null}>
+          <Analytics />
+        </Suspense>
       </body>
     </html>
   );
