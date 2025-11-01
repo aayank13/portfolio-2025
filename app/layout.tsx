@@ -4,8 +4,9 @@ import "./globals.css";
 import "highlight.js/styles/github-dark.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { GA_MEASUREMENT_ID } from "@/lib/gtag";
 import Script from "next/script";
+import Analytics from "./components/Analytics";
+import { GA_MEASUREMENT_ID } from "@/lib/gtag";
 
 const lora = Lora({
   variable: "--font-lora",
@@ -44,6 +45,8 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', '${GA_MEASUREMENT_ID}', { send_page_view: false });
+
+            window.dispatchEvent(new Event('gtag-loaded'));
           `}
         </Script>
       </head>
@@ -52,6 +55,7 @@ export default function RootLayout({
         <Navbar />
         <div className="pt-16">{children}</div>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

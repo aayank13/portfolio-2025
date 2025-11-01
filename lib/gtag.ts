@@ -1,9 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!;
+export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID! || '';
 
-// Track a page view
+export const isGAEnabled = GA_MEASUREMENT_ID !== '';
+
 export const pageview = (url: string) => {
-  if (typeof window === 'undefined' || !GA_MEASUREMENT_ID) return;
+  if (!isGAEnabled) return;
+  if (typeof window === 'undefined') return;
+
   (window as any).gtag('event', 'page_view', {
     page_location: window.location.href,
     page_path: url,
@@ -11,7 +14,6 @@ export const pageview = (url: string) => {
   });
 };
 
-// Track a custom event
 export const event = ({
   action,
   category,
@@ -23,10 +25,12 @@ export const event = ({
   label?: string;
   value?: number;
 }) => {
-  if (typeof window === 'undefined' || !GA_MEASUREMENT_ID) return;
+  if (!isGAEnabled) return;
+  if (typeof window === 'undefined') return;
   (window as any).gtag('event', action, {
     event_category: category,
     event_label: label,
     value,
   });
 };
+
