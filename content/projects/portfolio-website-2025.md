@@ -1,10 +1,10 @@
 ---
 title: "Portfolio Website 2025"
 date: "2025-11-01"
-description: "A modern portfolio website built with Next.js 15, featuring a blog system, project showcase, and responsive design."
+description: "A modern portfolio website built with Next.js 16, featuring a blog system, project showcase, and responsive design."
 tags: ["Next.js", "React", "TypeScript", "Tailwind CSS"]
-link: "https://yourportfolio.com"
-github: "https://github.com/yourusername/portfolio-2025"
+# link: "https://aayankhan.xyz"
+github: "https://github.com/aayank13/portfolio-2025"
 ---
 
 # Portfolio Website 2025
@@ -21,14 +21,14 @@ This project serves as both a personal portfolio and a blogging platform. It's d
 - **Project Showcase**: Display projects with detailed descriptions and links
 - **Responsive Design**: Optimized for all screen sizes
 - **Dark Mode Ready**: Built with customizable CSS variables
-- **Fast Performance**: Leverages Next.js 15 App Router and Server Components
+- **Fast Performance**: Leverages Next.js 16 App Router and Server Components
 - **SEO Optimized**: Proper metadata and semantic HTML
 
 ## Tech Stack
 
 The website is built using modern web technologies:
 
-- **Framework**: Next.js 15 with App Router
+- **Framework**: Next.js 16 with App Router
 - **Language**: TypeScript for type safety
 - **Styling**: Tailwind CSS for utility-first styling
 - **Content**: Markdown files with gray-matter for frontmatter parsing
@@ -87,21 +87,11 @@ The website is deployed on Vercel, taking advantage of:
 - Server-side rendering for optimal performance
 - Static generation for blog and project pages
 
-## Future Enhancements
-
-Planned improvements include:
-
-- [ ] Search functionality for blogs and projects
-- [ ] Tags filtering system
-- [ ] RSS feed for blog posts
-- [ ] Analytics integration
-- [ ] Newsletter subscription
-
 ## Lessons Learned
 
 Building this portfolio taught me:
 
-1. The power of Next.js 15's App Router
+1. The power of Next.js 16's App Router
 2. Effective content management with markdown
 3. Implementing clean and maintainable code structure
 4. Performance optimization techniques

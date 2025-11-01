@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio 2025
+
+A modern, minimal portfolio website built with Next.js 16, featuring a blog system, project showcase, and responsive design.
+
+## Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Content**: Markdown with gray-matter
+- **Deployment**: Vercel
+
+## Features
+
+- 📝 **Blog System** - Write posts in markdown
+- 🚀 **Project Showcase** - Display your work
+- 📱 **Responsive Design** - Works on all devices
+- ⚡ **Fast Performance** - Server-side rendering
+- 🎨 **Clean UI** - Minimal and focused design
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Content Management
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Adding a Blog Post
 
-## Learn More
+Create a new `.md` file in `content/blogs/`:
 
-To learn more about Next.js, take a look at the following resources:
+```markdown
+---
+title: "Your Blog Title"
+date: "2025-11-01"
+description: "Brief description"
+tags: ["tag1", "tag2"]
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Your content here...
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Adding a Project
 
-## Deploy on Vercel
+Create a new `.md` file in `content/projects/`:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```markdown
+---
+title: "Your Project Title"
+date: "2025-11-01"
+description: "Brief description"
+tags: ["React", "Next.js"]
+link: "https://live-demo.com"
+github: "https://github.com/username/repo"
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Your project description...
+```
+
+## Project Structure
+
+```
+├── app/                    # Next.js app directory
+│   ├── blogs/             # Blog pages
+│   ├── projects/          # Project pages
+│   ├── contact/           # Contact page
+│   ├── about-me/          # About page
+│   └── components/        # React components
+├── content/               # Markdown content
+│   ├── blogs/            # Blog posts
+│   └── projects/         # Project write-ups
+└── lib/                   # Utility functions
+    ├── blogs.ts          # Blog utilities
+    └── projects.ts       # Project utilities
+```
+
+
+Built with ❤️ by Aayan Khan
