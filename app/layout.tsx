@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import Script from "next/script";
 import Analytics from "./components/Analytics";
 import { GA_MEASUREMENT_ID } from "@/lib/gtag";
+import { Analytics as VAnalytics } from "@vercel/analytics/next";
 
 const lora = Lora({
   variable: "--font-lora",
@@ -59,6 +60,7 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <Analytics />
         </Suspense>
+        <VAnalytics />
       </body>
     </html>
   );
