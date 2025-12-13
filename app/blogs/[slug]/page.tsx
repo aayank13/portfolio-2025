@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   try {
     const post = await getBlogPost(slug);
     return {
-      title: `${post.title} | Your Name`,
+      title: `${post.title} | Aayan Khan`,
       description: post.description,
     };
   } catch {
